@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Part Pre-Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+    }
+
+    .header {
+      background: #5f2c82;
+      padding: 20px;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color:#5f2c82;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      font-size: 16px;
+      margin-bottom: 10px;
+      display:flex;
+      justify-content:space-between;
+    }
+
+    .info strong {
+      display: inline-block;
+      width: 160px;
+    }
+
+    .summary {
+      background: #f2f2f2;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .form-box {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    input[type="number"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      background: #5f2c82;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size:17px;
+    }
+
+    .submit-btn:hover {
+      background: #5f2c82;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #4c2edf;
+      color: white;
+    }
+
+    .paid {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      .info strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+
+ .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="container">
+  <div class="header">
+    🔄 Loan Part Pre-Payment
+  </div>
+
+
+
+  <h2>Loan Overview</h2>
+  <div class="info"><strong>Loan Type:</strong> Home Loan</div>
+  <div class="info"><strong>Total Loan Amount:</strong> ₹5,00,000</div>
+  <div class="info"><strong>EMI Tenure:</strong> 24 Months</div>
+  <div class="info"><strong>Status:</strong> Active</div>
+
+  <div class="summary">
+    <div class="info" style="color:green;"><strong>Pre-Payments Made:</strong> ₹50,000</div>
+    <div class="info" style="color:#ff4500fa;"><strong>Remaining Balance:</strong> ₹4,50,000</div>
+  </div>
+
+  <div class="form-box" >
+    <h2>Make a Part Pre-Payment</h2>
+    <form action="loanupiaccounts" method="get">
+      <label for="preamount">Enter Pre-Payment Amount (₹):</label>
+      <input type="number" id="preamount" name="preamount" placeholder="e.g. 10000" required>
+
+      <button class="submit-btn">Pay Now</button>
+    </form>
+
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+</body>
+</html>

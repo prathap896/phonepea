@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhonePe QR Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode@2.3.7/html5-qrcode.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <style>
+    :root {
+      --primary: #4c2edf;
+      --accent: #a1887f;
+      --bg: #f1f3f5;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+
+    }
+    .container {
+      max-width: 400px;
+      background: white;
+      margin: 20px auto;
+      padding:10px 30px 30px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background:#5f2c82;
+      color: white;
+      text-align: center;
+      padding: 16px;
+
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+    }
+
+    #reader {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 10px;
+
+    }
+
+    .btn {
+      margin-top: 20px;
+      background:#5f2c82;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+
+    }
+
+
+
+    .result {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 15px;
+      word-break: break-word;
+      display: none;
+    }
+      .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  margin-bottom:20px;
+  border-radius: 10px 10px 10px 10px;
+  }
+.phone{
+  font-size:40px;
+  font-family:serif;
+}
+.div1{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right:5%;
+}
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+.login button:hover{
+  background:#5f2c82;
+  color:white;
+}
+.register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+}
+.footer{
+  background:#5f2c82;
+  color:white;
+  border-radius: 10px 10px 10px 10px;
+  margin-top:5px;
+  position:sticky;
+  bottom:0;
+}
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="container">
+  <div class="wrapper">
+    <div class="header">📷 PhonePe QR Code Scanner</div>
+
+    <!--    <button class="btn" onclick="startScan()">Start Scanner</button>-->
+    <div id="reader"></div>
+
+    <div class="result" id="resultBox">
+      <strong>Scanned:</strong>
+      <div id="qrData"></div>
+      <!--      <button class="btn" onclick="proceedToPay()">Proceed to Pay</button>-->
+    </div>
+    <button class="btn" onclick="proceedToPay()">Proceed to Pay</button>
+
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  let scanner;
+  const resultBox = document.getElementById("resultBox");
+  const qrData = document.getElementById("qrData");
+
+
+    scanner = new Html5Qrcode("reader");
+    scanner.start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: { width: 250, height: 250 } },
+      qr => {
+        scanner.stop().then(() => {
+          qrData.textContent = qr;
+          resultBox.style.display = "block";
+          localStorage.setItem("scannedQR", qr);
+        });
+      },
+      err => {
+        // Ignore scanning errors
+      }
+    ).catch(e => {
+      alert("Unable to access camera: " + e);
+    });
+
+
+  function proceedToPay() {
+    // Redirect to next page
+    window.location.href = "scannerpin";
+  }
+</script>
+
+</body>
+</html>

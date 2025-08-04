@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salary Based Loan Eligibility</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+
+      background: #f4f6f8;
+    }
+
+    .container {
+      background: #fff;
+      padding: 45px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin:80px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #5f2c82;
+      text-align: center;
+    }
+
+    .slider-box {
+      margin-top: 20px;
+    }
+
+    .range-value {
+      font-weight: bold;
+      color: #333;
+    }
+
+    #loading {
+      display: none;
+      margin-top: 15px;
+      color: #555;
+    }
+.btn {
+      background: #5f2c82;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+      width: 100%;
+      cursor: pointer;
+    }
+    #result {
+      display: none;
+      background: #e9f5ff;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    #result p {
+      margin: 8px 0;
+    }
+    .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+
+</div>
+<div class="container">
+  <h2>💼 Loan Eligibility Checker</h2>
+
+  <div class="slider-box">
+    <label for="salaryRange">Select Monthly Salary: ₹<span id="salaryValue">10000</span></label><br>
+    <input type="range" id="salaryRange" min="10000" max="100000" step="1000" value="10000" oninput="updateSalary(this.value)" onchange="calculateEligibility(this.value)">
+  </div>
+
+  <div id="loading">⏳ Calculating eligibility...</div>
+
+  <div id="result">
+    <p><strong>Interest Rate:</strong> <span id="interestRate"></span></p>
+    <p><strong>Eligible Loan Type:</strong> <span id="loanType"></span></p>
+    <p><strong>Eligible Loan Amount:</strong> ₹<span id="loanAmount"></span></p>
+  </div>
+  <form action="loanapproval" method="get">
+    <button class="btn">Submit</button>
+  </form>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  function updateSalary(value) {
+
+    document.getElementById('salaryValue').innerText = value;
+  }
+
+  function calculateEligibility(salary) {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
+
+    setTimeout(() => {
+      salary = parseInt(salary);
+      let interest = 0;
+      let type = '';
+      let eligible = 0;
+
+      if (salary < 15000) {
+        interest = 11.5;
+        type = "Basic";
+        eligible = salary * 8;
+      } else if (salary <= 30000) {
+        interest = 9.5;
+        type = "Standard";
+        eligible = salary * 10;
+      } else if (salary <= 50000) {
+        interest = 8.5;
+        type = "Premium";
+        eligible = salary * 12;
+      } else {
+        interest = 7.0;
+        type = "Super Saver";
+        eligible = salary * 15;
+      }
+
+      document.getElementById('interestRate').innerText = interest + "%";
+      document.getElementById('loanType').innerText = type;
+      document.getElementById('loanAmount').innerText = eligible.toLocaleString();
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+    }, 1000);
+  }
+
+  // Initial calculation
+  window.onload = () => calculateEligibility(10000);
+</script>
+
+</body>
+</html>

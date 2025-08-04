@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhonePe</title>
+  <link rel="stylesheet" href="dashboard-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f1f3f5;
+}
+
+
+
+.top-bar {
+  background: #4c2edf;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.wallet {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.wallet h2 {
+  color: #0f8f4b;
+}
+
+.wallet button {
+  background: #4c2edf;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+}
+
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  margin: 10px 0 20px 50px;
+
+
+}
+
+.scroll-row a {
+  background: #e0e7ff;
+  padding: 45px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  width:20%;
+  text-align:center;
+  color:black;
+  text-decoration:none;
+  font-size:25px
+
+}
+.scroll-row a:hover{
+  background: #5f2c82;
+  color: white;
+
+}
+.offers {
+  background: #fff3d6;
+  padding: 15px;
+  border-left: 5px solid orange;
+  border-radius: 6px;
+}
+
+.logout {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+ .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  margin-bottom:20px;
+  border-radius: 10px 10px 10px 10px;
+  position:sticky;
+  top:0;
+}
+.phone{
+  font-size:40px;
+  font-family:serif;
+}
+.div1{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right:5%;
+}
+.login{
+  margin-right:10%;
+}
+.login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+  font-weight:600;
+  font-size:17px;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register{
+  margin-right:3%;
+  }
+.register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+.register button:hover{
+  background:#5f2c82;
+  color:white;
+}
+.footer{
+  background:#5f2c82;
+  color:white;
+  border-radius: 10px 10px 10px 10px;
+  margin-top:5px;
+  position:sticky;
+  bottom:0;
+
+}
+.footer a{
+  padding: 10px 30px;
+}
+.footer div{
+  display:flex;
+  justify-content:center;
+}
+
+.footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+  font-weight:600;
+  padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1604169313744-59f3efc22e50?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: #5f2c82;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration:none;
+}
+.profile{
+border-radius:30px;
+height:40px;
+background-color:#5f2c82;
+}
+    .profile:hover{
+    background:white;
+    }
+    .a{
+    color:white;
+    width:67px;
+    }
+    .a:hover{
+    color:#5f2c82;
+    }
+</style>
+<body>
+<div class="dashboard">
+  <div class="phonepe">
+    <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+      Phonepe
+    </div></a>
+    <div class="div1">
+      <div class="login"><a href="loginpage"><button type="submit">Login</button></a></div>
+      <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>
+      <a href="profilepage"  class="a"><div class="profile">
+        <i class='fa fa-user' style="font-size:27px;margin-left:9px;margin-top:5.5px;"></i>
+      </div></a>
+    </div>
+
+  </div>
+  <!--    <div class="top-bar">-->
+  <!--      <div>-->
+  <!--        <h3>Hello, Bhargavi 👋</h3>-->
+  <!--        <p>Welcome to PhonePe</p>-->
+  <!--      </div>-->
+  <!--      <div>👤</div>-->
+  <!--    </div>-->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Payments Made Easy</h2>
+      <p>Recharge, Pay Bills, Send Money & More with PhonePe</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+  <!--    <div class="wallet">-->
+  <!--      <div>-->
+  <!--        <p>Wallet Balance</p>-->
+  <!--        <h2>₹3,200.00</h2>-->
+  <!--      </div>-->
+  <!--      <button>Add Money</button>-->
+  <!--    </div>-->
+  <div>
+    <h3 style="text-align:center;color:#5f2c82;font-size:25px;">Quick Actions</h3>
+    <div class="scroll-row">
+      <a href="transfermoney"><div>📱<br> <span style="font-size:20px;font-weight:500;">Mobile</span></div></a>
+      <a href="banktransfer"><div>🏦<br> <span style="font-size:20px;font-weight:500;"> Bank </span></div></a>
+      <!--      <div>📷 Scan</div>-->
+      <a href="loanemi"><div><span>&#128176;</span><br> <span style="font-size:20px;font-weight:500;"> Loan EMI </span></div></a>
+      <a href="upiaccounts"><div><i class="fa fa-rupee" style="font-size:36px"></i><br> <span style="font-size:20px;font-weight:500;"> Check Balance </span></div></a>
+    </div>
+
+    <h3 style="text-align:center;color:#5f2c82;font-size:25px;">Recharge & Pay</h3>
+    <div class="scroll-row">
+      <a href="mobilerecharge"><div>📱<br> <span style="font-size:20px;font-weight:500;"> Mobile Recharge </span></div></a>
+      <a href="electricity"><div>💡<br> <span style="font-size:20px;font-weight:500;"> Electricity </span></div></a>
+      <a href="dthrecharge"><div>📶<br> <span style="font-size:19px;font-weight:500;"> DTH </span></div></a>
+      <!--        <div>🏠 Rent</div>-->
+      <a href="loansview"><div><span>&#128178;</span><br><span style="font-size:20px;font-weight:500;">My EMI</span></div></a>
+    </div>
+
+    <h3 style="text-align:center;color:#5f2c82;font-size:25px;">Services</h3>
+    <div class="scroll-row">
+      <a href="rechargehistory"><div><i class='fa fa-history'></i><br> <span style="font-size:20px;font-weight:500;"> Recharge History </span></div></a>
+      <a href="transactionhistory"><div><i class='fa fa-history' style="color:purple;"></i><br> <span style="font-size:20px;font-weight:500;"> Transaction History </span></div></a>
+      <a href="types"><div><span>&#128179;</span><br><span style="font-size:19px;font-weight:500;">Types</span></div></a>
+      <!--        <div>🏠 Rent</div>-->
+      <a href="notification"><div><i class="fa fa-bell" style="font-size:24px;color:brown;"></i><br><span style="font-size:20px;font-weight:500;">Notifications</span></div></a>
+    </div>
+  </div>
+  <!--    <div class="offers">-->
+  <!--      <h4>🎁 Offer</h4>-->
+  <!--      <p>Recharge now and get ₹100 cashback!</p>-->
+  <!--    </div>-->
+
+  <div class="footer">
+    <div>
+      <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+      <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+      <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+      <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+      <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

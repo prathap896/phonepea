@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Options</title>
+    <style>
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background: #f4f6f8;
+          padding: 20px;
+        }
+
+        .container {
+          max-width: 600px;
+          margin: auto;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          padding: 25px;
+        }
+
+        h2 {
+          text-align: center;
+          color: #5f2c82;
+          margin-bottom: 20px;
+        }
+
+        .btn-group {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+        }
+
+        .btn-group button {
+          flex: 1;
+          padding: 12px;
+          margin: 5px;
+          border: none;
+          border-radius: 6px;
+          background: #5f2c82;
+          color: #fff;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        .submit-btn {
+          margin-top: 20px;
+          background-color: #4c2edf;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 8px;
+          font-weight: bold;
+          width: 100%;
+          cursor: pointer;
+        }
+
+        .submit-btn:hover {
+          background: #5f2c82;
+        }
+        .btn-group button:hover {
+          background: #4c2edf;
+        }
+
+        .form-section {
+          display: none;
+          margin-top: 20px;
+        }
+
+        .form-section.active {
+          display: block;
+        }
+
+        .form-section label {
+          display: block;
+          margin: 10px 0 5px;
+          font-weight: 600;
+        }
+
+        .form-section input{
+          width: 92%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+        .form-section select {
+          width: 95%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+
+        @media (max-width: 480px) {
+          .btn-group {
+            flex-direction: column;
+          }
+
+          .btn-group button {
+            width: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+<!--{% for operator in all_operator %}-->
+<!--{{operator.operators}}-->
+<!--{% endfor %}-->
+<div class="container">
+    <h2>📶 Recharge Options</h2>
+
+    <div class="btn-group">
+        <button onclick="showForm('operators')">operators</button>
+        <button onclick="showForm('states')">States</button>
+        <button onclick="showForm('plans')">plans</button>
+    </div>
+
+    <!-- Operators Form -->
+    <div class="form-section active" id="operators">
+        <form action="operators" method="POST">
+<!--            {% csrf_token %}-->
+            <label>Operator Name:</label>
+            <input type="text" name="operator_name" placeholder="Enter operator name">
+
+            <label>Operator Type:</label>
+            <select name="type">
+                <option value="">-- Select Type --</option>
+                <option>mobile</option>
+                <option>dth</option>
+                <option>electricity</option>
+            </select>
+            <button class="submit-btn" type="submit">Submit </button>
+        </form>
+    </div>
+
+    <!-- States Form -->
+    <div class="form-section" id="states">
+        <form action="states" method="POST">
+            {% csrf_token %}
+            <label>State Name:</label>
+            <input type="text" name="state_name" placeholder="Enter state name">
+            <button class="submit-btn" type="submit">Submit </button>
+        </form>
+    </div>
+
+    <!-- Plans Form -->
+    <div class="form-section" id="plans">
+        <form action="plans" method="POST">
+<!--            {% csrf_token %}-->
+            <label>Operator ID:</label>
+            <select  name="operator_id" required>
+                <option>Select operator id</option>
+                {% for operator in all_operator %}
+                <option value="{{operator.id}}">{{operator.operators}}</option>
+                {% endfor %}
+            </select>
+
+            <label>Plan Name:</label>
+            <input type="text" name="plan_name" placeholder="Enter plan name">
+
+            <label>Validity:</label>
+            <input type="text" name="validity" placeholder="Enter validity">
+
+            <label>Amount:</label>
+            <input type="number" name="amount" placeholder="Enter amount">
+
+            <button class="submit-btn" type="submit">Submit </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showForm(id) {
+      const sections = document.querySelectorAll('.formsection');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+</script>
+</body>
+</html>

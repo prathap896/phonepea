@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Check Balance - PhonePe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    :root {
+      --primary: #4c2edf;
+      --accent: #a1887f;
+      --bg: #f1f3f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .upi-list {
+      margin-top: 30px;
+
+    }
+
+    .upi-card {
+      background: #f1f3f5;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .upi-card h4 {
+      margin: 0 0 5px;
+      color:#5f2c82;
+    }
+
+    .upi-card p {
+      margin: 0;
+      color: black;
+    }
+        .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+
+</div>
+<div class="container">
+  <div class="header">Upi accounts</div>
+
+  <!--    <button class="btn" onclick="showAccounts()">Click to Show Linked UPI Accounts</button>-->
+
+  <div class="upi-list" id="upiList">
+    <a href="electricitypin" style="text-decoration:none;"><div class="upi-card">
+      <h4>HDFC Bank</h4>
+      <p>UPI ID: bhargavi@hdfcbank</p>
+      <p>Balance: ₹10,540.00</p>
+    </div></a>
+
+    <a href="electricitypin" style="text-decoration:none;"><div class="upi-card">
+      <h4>SBI Bank</h4>
+      <p>UPI ID: bhargavi@sbi</p>
+
+    </div></a>
+
+    <a href="electricitypin" style="text-decoration:none;"><div class="upi-card">
+      <h4>Paytm Payments Bank</h4>
+      <p>UPI ID: bhargavi@paytm</p>
+
+    </div></a>
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+</body>
+</html>

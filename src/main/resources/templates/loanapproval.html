@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loan Approved</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+      margin-bottom:20px;
+    }
+    .header1 {
+      background: #49a09d;
+      color: white;
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+      margin-bottom:20px;
+    }
+    .btn {
+      width: 100%;
+      margin-top: 25px;
+      background: #5f2c82;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align:center;
+    }
+    .info {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .info strong {
+      display: inline-block;
+      width: 150px;
+      color: #333;
+    }
+
+
+    .back {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back a {
+      color: #5f2c82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .schedule div{
+     background-color:#fbe5e52e;
+      color: black;
+       border-radius: 15px 15px 15px 15px;
+       padding: 16px;
+       font-size: 15px;
+      font-weight: bold;
+      display:flex;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="container">
+  <div class="header">✅ Loan Application Approved</div>
+
+  <div class="info"><strong>Loan amount:</strong>₹ <span id="loan">100000</span></div>
+  <div class="info"><strong>Months:</strong> <span id="name">12</span></div>
+  <div class="info"><strong>Months EMI:</strong>₹ <span id="type">14333</span></div>
+  <div class="info"><strong>Interest Rate:</strong> <span id="amount">2%</span></div>
+  <div class="info"><strong>Loan Start Date:</strong> <span id="income">01/01/2025</span></div>
+  <div class="info"><strong>Loan Due Date:</strong> <span id="email">01/04/2025</span></div>
+  <div class="info"><strong>Loan End Date:</strong> <span id="phone">01/12/2025</span></div>
+
+
+  <div class="header1">📅 EMI Schedule</div>
+  <div class="schedule">
+    <div>01 July 2025 <span>₹8,792</span></div>
+    <div>01 August 2025 <span>₹8,792</span></div>
+    <div>01 September 2025 <span>₹8,792</span></div>
+    <div>01 October 2025 <span>₹8,792</span></div>
+    <div>01 November 2025 <span>₹8,792</span></div>
+    <div>01 December 2025 <span>₹8,792</span></div>
+    <div>01 January 2026 <span>₹8,792</span></div>
+    <div>01 February 2026 <span>₹8,792</span></div>
+    <div>01 March 2026 <span>₹8,792</span></div>
+    <div>01 April 2026 <span>₹8,792</span></div>
+    <div>01 May 2026 <span>₹8,792</span></div>
+    <div>01 June 2026 <span>₹8,792</span></div>
+
+  </div>
+  <form action="loansubmitted" method="get">
+    <button type="submit" class="btn">Are you agree with this loan</button>
+  </form>
+  <div class="back">
+    <a href="loanemi"><i class="fa fa-arrow-left"></i> Back to Loan Form</a>
+  </div>
+
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+
+</script>
+
+</body>
+</html>

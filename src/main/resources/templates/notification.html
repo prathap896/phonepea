@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px 10px 10px 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .notification {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .notification:last-child {
+      border-bottom: none;
+    }
+
+    .notification i {
+      color: #5f2c82;
+      margin-right: 10px;
+    }
+
+    .notification-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .notification-time {
+      color: gray;
+      font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 10px;
+      }
+    }
+
+        .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+
+</div>
+<div class="container">
+  <div class="header">
+    🔔 Notifications
+  </div>
+
+
+  <div class="notification">
+    <div class="notification-title"><i class="fa fa-check-circle"></i>Loan Pre-Closure Successful</div>
+    <div>Your loan has been successfully closed on 25 June 2025.</div>
+    <div class="notification-time">Just now</div>
+  </div>
+
+  <div class="notification">
+    <div class="notification-title"><i class="fa fa-money"></i>EMI Payment Received</div>
+    <div>Your EMI for July has been paid successfully. ₹8,792 debited.</div>
+    <div class="notification-time">2 hours ago</div>
+  </div>
+
+  <div class="notification">
+    <div class="notification-title"><i class="fa fa-info-circle"></i>Loan Application Update</div>
+    <div>Your loan status is now <strong>Approved</strong>. Disbursement in process.</div>
+    <div class="notification-time">Yesterday</div>
+  </div>
+
+  <div class="notification">
+    <div class="notification-title"><i class="fa fa-exclamation-triangle"></i>Payment Reminder</div>
+    <div>Your EMI due on 01 August 2025. Please ensure sufficient balance.</div>
+    <div class="notification-time">2 days ago</div>
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+</body>
+</html>

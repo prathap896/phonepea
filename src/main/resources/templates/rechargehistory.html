@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recharge History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <style>
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background: #f4f6f8;
+
+        }
+
+        .header {
+          background: #5f2c82;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          font-size: 22px;
+          font-weight: bold;
+          border-radius: 10px 10px 10px 10px;
+        }
+
+        .container {
+          max-width: 600px;
+          margin: 30px auto;
+          background: #fff;
+          padding: 15px;
+          border-radius: 10px;
+
+          box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .recharge {
+                                                                                      display: flex;
+          padding: 50px;
+          border-bottom: 1px solid #eee;
+        }
+
+        .recharge:last-child {
+          border-bottom: none;
+        }
+
+        .details {
+          flex: 1;
+          padding:20px 0
+        }
+
+        .title {
+          font-weight: bold;
+          color: #333;
+        }
+
+        .datetime {
+          color: #777;
+          font-size: 13px;
+        }
+
+        .amount {
+          font-weight: bold;
+          font-size: 16px;
+          margin-top: 50px;
+        }
+
+        .status {
+          font-size: 13px;
+          font-weight: bold;
+          padding: 4px 8px;
+          border-radius: 6px;
+          margin-top: 5px;
+          display: inline-block;
+        }
+    .status.success {
+        color: green;
+      }
+
+      .status.failed {
+        color: red;
+      }
+        .success {
+          background-color: #e8f5e9;
+          color: #2e7d32;
+        }
+        .debit {
+          color: #f44336;
+        }
+
+        .credit {
+          color: #4caf50;
+        }
+        .failed {
+          background-color: #ffebee;
+          color: #c62828;
+        }
+
+        @media (max-width: 480px) {
+          .recharge {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .amount {
+            margin-top: 50px;
+          }
+        }
+                      .phonepe{
+      background:linear-gradient(90deg, #5f2c82, #49a09d);
+      color:white;
+      display:flex;
+    justify-content:space-between;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius: 10px 10px 10px 10px;
+
+      }
+      .phone{
+      font-size:40px;
+      font-family:serif;
+      }
+      .div1{
+      display:flex;
+          justify-content: flex-end;
+        align-items: center;
+    margin-right:5%;
+      }
+      .login{
+      margin-right:10%;
+      }
+      .login button{
+      background:white;
+      margin-right:3%;
+      padding: 12px;
+    font-size:17px;
+    font-weight:600;
+    border-radius:20px;
+    border:none;
+    color:#5f2c82;
+      }
+      .login button:hover{
+      background:#5f2c82;
+      color:white;
+      }
+      .register button{
+      background:white;
+      margin-right:5%;
+      padding: 12px;
+      font-size:17px;
+      font-weight:600;
+    border-radius:20px;
+    border:none;
+    color:#5f2c82;
+      }
+      .register button:hover{
+      background:#5f2c82;
+      color:white;
+      }
+      .footer{
+      background:#5f2c82;
+      color:white;
+    border-radius: 10px 10px 10px 10px;
+    margin-top:5px;
+    position:sticky;
+    bottom:0;
+      }
+      .footer a{
+      padding: 10px 30px;
+      }
+      .footer div{
+      display:flex;
+      justify-content:center;
+      }
+
+      .footer button{
+      border:none;
+      background: white;
+      color:#5f2c82;
+       padding: 10px 16px;
+      border-radius: 10px 10px 10px 10px;
+
+      }
+    </style>
+</head>
+<body>
+<div class="phonepe">
+    <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+        Phonepe
+    </div></a>
+    <!--      <div class="div1">-->
+    <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+    <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+    <!--      </div>-->
+
+</div>
+<div class="container">
+    <div class="header">
+        📶 Recharge History
+    </div>
+
+    <div class="recharge">
+        <div class="details">
+            <div class="title">Ravi Kumar • ravi@ybl • Jio • Mobile Recharge</div>
+            <div class="datetime">25 June 2025 • 10:10 AM</div>
+            <div class="status success">Success</div>
+        </div>
+        <div class="amount credit">₹299</div>
+    </div>
+
+    <div class="recharge">
+        <div class="details">
+            <div class="title">Anusha Reddy • anusha@oksbi • Airtel • Bill Payment</div>
+            <div class="datetime">22 June 2025 • 3:15 PM</div>
+            <div class="status success">Success</div>
+        </div>
+        <div class="amount credit">₹199</div>
+    </div>
+
+    <div class="recharge">
+        <div class="details">
+            <div class="title">Kiran Patel • kiran@okhdfcbank • VI • Mobile Recharge</div>
+            <div class="datetime">18 June 2025 • 8:20 PM</div>
+            <div class="status failed">Failed</div>
+        </div>
+        <div class="amount debit">₹149</div>
+    </div>
+
+    <div class="recharge">
+        <div class="details">
+            <div class="title">Sneha Rao • sneha@okaxis • Sun Direct • DTH Recharge</div>
+            <div class="datetime">15 June 2025 • 1:00 PM</div>
+            <div class="status success">Success</div>
+        </div>
+        <div class="amount credit">₹399</div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <div>
+        <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+        <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+        <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+        <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+        <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+    </div>
+</div>
+</body>
+</html>

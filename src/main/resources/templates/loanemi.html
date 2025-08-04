@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bank Loan Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 500px;
+      background: white;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #5f2c82;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+.header {
+      background: #5f2c82;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+      margin-bottom:20px;
+    }
+    input{
+      width: 94%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+     select{
+      width: 99%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+
+    .section-title {
+      margin: 30px 0 10px;
+      font-size: 18px;
+      color: #4c2edf;
+      font-weight: 600;
+    }
+
+    button {
+      background-color: #5f2c82;
+      color: white;
+      padding: 14px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .approval-box {
+      display: none;
+      background-color: #5f2c82;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #1b5e20;
+    }
+
+    .approval-box h3 {
+      margin-top: 0;
+    }
+
+    .info-row {
+      margin-bottom: 10px;
+    }
+
+    .info-label {
+      font-weight: bold;
+    }
+          .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="form-container">
+
+  <div class="header"><span>&#128176;</span> Bank Loan Application</div>
+  <form id="loanForm" onsubmit="submitForm(event)" action="loananimation" >
+
+    <label>Full Name</label>
+    <input type="text" id="fullname" required />
+
+    <label>Email</label>
+    <input type="email" id="email" required />
+
+    <label>Phone Number</label>
+    <input type="tel" id="phone" required pattern="[0-9]{10}" />
+
+    <label>Pan Card</label>
+    <input type="text" id="pan" required />
+
+
+    <label>Loan Type</label>
+    <select id="loanType" required>
+      <option value="">Select</option>
+      <option>Personal Loan</option>
+      <option>Business Loan</option>
+      <option>Education Loan</option>
+      <option>Home Loan</option>
+    </select>
+
+    <label>Tenure (Months)</label>
+    <input type="number" id="tenure" required />
+
+    <label>Monthly EMI (₹)</label>
+    <input type="number" id="emi" required />
+
+    <label>Monthly Salary (₹)</label>
+    <input type="number" id="salary" required />
+
+    <label>Address</label>
+    <input type="text" id="address" required />
+
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <!--    <div class="approval-box" id="approvalBox">-->
+  <!--      <h3>✅ Loan Application Approved (Preview)</h3>-->
+  <!--      <div class="info-row"><span class="info-label">Name:</span> <span id="r_name"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Loan Type:</span> <span id="r_type"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Amount:</span> ₹<span id="r_amount"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Tenure:</span> <span id="r_tenure"></span> months</div>-->
+  <!--      <div class="info-row"><span class="info-label">Employment:</span> <span id="r_employment"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Monthly Income:</span> ₹<span id="r_income"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Email:</span> <span id="r_email"></span></div>-->
+  <!--      <div class="info-row"><span class="info-label">Phone:</span> <span id="r_phone"></span></div>-->
+  <!--    </div>-->
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<!-- Inside <script> -->
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+
+    // Gather values
+    const userData = {
+      name: document.getElementById('fullname').value,
+      loanType: document.getElementById('loanType').value,
+      address: document.getElementById('address').value,
+      tenure: document.getElementById('tenure').value,
+      pan_card: document.getElementById('pan').value,
+      emi: document.getElementById('emi').value,
+      salary: document.getElementById('salary').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value
+    };
+
+    // Store in localStorage
+    localStorage.setItem("loanData", JSON.stringify(userData));
+
+<!--    // Redirect to approval page-->
+    window.location.href = "loan-animation";
+
+  }
+</script>
+
+
+</body>
+</html>

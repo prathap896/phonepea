@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan EMI Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 3%;
+    }
+
+    .info {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .info strong {
+      width: 150px;
+      display: inline-block;
+      color: #333;
+    }
+
+    .status {
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    .success {
+      color: #4caf50;
+    }
+
+    .btn, .action-btn {
+      background: #5f2c82;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size:17px;
+    }
+
+    .btn-block {
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+      display:flex;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 12px;
+      font-weight: bold;
+      background: #ddd;
+      color: #333;
+      border: none;
+      border-radius: 6px 6px 0 0;
+      cursor: pointer;
+      margin: 0 2px;
+      font-size:17px;
+    }
+
+    .tab-btn.active {
+      background: #4c2edf;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #4c2edf;
+      color: white;
+    }
+
+    .paid {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .pending {
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    .pay-btn {
+      background-color: #4c2edf;
+      color: white;
+      padding: 6px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+    }
+
+    .pay-btn:disabled {
+      background: #ccc;
+      cursor: default;
+    }
+
+ .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+
+
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+
+<div class="container">
+  <div class="header">💸 My Loan and EMI Details</div>
+  <div class="info"><strong>Id:</strong> 1</div>
+  <div class="info"><strong>Loan Type:</strong> Personal Loan</div>
+  <div class="info"><strong>Loan Amount:</strong> ₹1,00,000</div>
+  <div class="info"><strong>Tenure:</strong> 12 Months</div>
+  <div class="info"><strong>Reference ID:</strong> LOAN20250625001</div>
+  <div class="info"><strong>Status:</strong> <span class="status">Pending Review</span></div>
+
+  <!-- Post Payment and Pre-Close Buttons -->
+  <div class="actions">
+    <form action="partpayments" method="get">
+      <button class="action-btn">Part Payment</button>
+    </form>
+    <form action="preclose" method="get">
+      <button class="action-btn">Pre-Close</button>
+    </form>
+  </div>
+
+  <!-- Toggle Tabs -->
+  <div class="tabs">
+    <button id="tabAll" class="tab-btn active" onclick="showTab('all')">🔁 All</button>
+    <button id="tabLoan" class="tab-btn" onclick="showTab('loan')">💳 Loan Payments</button>
+  </div>
+
+  <!-- EMI Schedule -->
+  <div id="allTab">
+    <!--    <h3>📅 EMI Schedule</h3>-->
+    <table>
+      <thead>
+      <tr>
+        <th>EMI No.</th>
+        <th>Due Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>01 July 2025</td>
+        <td>₹8,792</td>
+        <td class="paid">Paid</td>
+        <td><button class="pay-btn" disabled>Paid</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>01 August 2025</td>
+        <td>₹8,792</td>
+        <td class="pending" id="status2">Pending</td>
+        <td><button class="pay-btn" onclick="markPaid(2)">Pay Now</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Loan Payments History -->
+  <div id="loanTab" style="display:none;">
+    <!--    <h3>📘 Loan Payments History</h3>-->
+    <table>
+      <thead>
+      <tr>
+        <th>Txn ID</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>TXN001</td>
+        <td>01 July 2025</td>
+        <td>₹8,792</td>
+        <td class="paid">Paid</td>
+      </tr>
+      <tr>
+        <td>TXN002</td>
+        <td>01 August 2025</td>
+        <td>₹8,792</td>
+        <td class="pending" id="pending">Pending</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="home" class="btn btn-block">← Back to Home</a>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  function markPaid(emiNo) {
+    document.getElementById('status' + emiNo).innerText = "Paid";
+    document.getElementById('status' + emiNo).className = "paid";
+    const btn = event.target;
+    btn.disabled = true;
+    btn.innerText = "Paid";
+    document.getElementById('pending').innerText = "Paid";
+    document.getElementById('pending').style.color = "#4caf50";
+  }
+
+  function showTab(tab) {
+    const all = document.getElementById('allTab');
+    const loan = document.getElementById('loanTab');
+    const btnAll = document.getElementById('tabAll');
+    const btnLoan = document.getElementById('tabLoan');
+
+    if (tab === 'all') {
+      all.style.display = 'block';
+      loan.style.display = 'none';
+      btnAll.classList.add('active');
+      btnLoan.classList.remove('active');
+    } else {
+      all.style.display = 'none';
+      loan.style.display = 'block';
+      btnAll.classList.remove('active');
+      btnLoan.classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhonePe - Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+  /* Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+background: #f7f7f7;
+color: #333;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+/* Container */
+.container {
+width: 90%;
+max-width: 1200px;
+margin: auto;
+}
+
+/* Header */
+.header {
+background: linear-gradient(90deg, #5f2c82, #49a09d);
+padding: 1rem 0;
+color: white;
+}
+
+.header .logo {
+font-size: 1.8rem;
+font-weight: bold;
+}
+
+.nav {
+display: flex;
+gap: 1.5rem;
+justify-content: flex-end;
+align-items: center;
+}
+
+.header .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.login-btn {
+background: white;
+color: #5f2c82;
+padding: 0.4rem 1rem;
+border-radius: 20px;
+font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+background: url('https://images.unsplash.com/photo-1604169313744-59f3efc22e50?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+height: 60vh;
+display: flex;
+align-items: center;
+color: white;
+text-align: center;
+}
+
+.hero-content {
+width: 100%;
+}
+
+.hero h2 {
+font-size: 3rem;
+margin-bottom: 0.5rem;
+}
+
+.hero p {
+font-size: 1.2rem;
+}
+
+.cta-button {
+display: inline-block;
+margin-top: 1rem;
+padding: 0.6rem 1.5rem;
+background: #5f2c82;
+color: white;
+border-radius: 25px;
+font-weight: bold;
+}
+
+/* Features */
+.features {
+padding: 2rem 0;
+background: #fff;
+text-align: center;
+}
+
+.features h2 {
+margin-bottom: 1.5rem;
+color: #5f2c82;
+}
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 1.5rem;
+}
+
+.card {
+background: #f0f0f0;
+padding: 2rem 1rem;
+border-radius: 12px;
+transition: 0.3s;
+}
+
+.card:hover {
+background: #5f2c82;
+color: white;
+transform: translateY(-5px);
+}
+
+.card i {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+background: #5f2c82;
+color: white;
+text-align: center;
+padding: 1rem 0;
+margin-top: 2rem;
+}
+
+</style>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <h1 class="logo">PhonePe</h1>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Offers</a>
+      <a href="#">Contact</a>
+      <a href="#" class="login-btn">Login</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Payments Made Easy</h2>
+    <p>Recharge, Pay Bills, Send Money & More with PhonePe</p>
+    <a href="#" class="cta-button">Get Started</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile Recharge</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Electricity Bill</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-university"></i>
+        <h3>Bank Transfer</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-tags"></i>
+        <h3>Offers</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 PhonePe Clone. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

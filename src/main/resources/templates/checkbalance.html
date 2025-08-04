@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Check Balance - PhonePe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+    :root {
+      --primary: #4c2edf;
+      --accent: #a1887f;
+      --bg: #f1f3f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: #333;
+    }
+
+    .container {
+      width: 450px;
+      background: white;
+      margin: 50px auto;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background:#5f2c82;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 94%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 25px;
+      background: #5f2c82;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+
+    .balance-box {
+      margin-top: 25px;
+       margin-bottom: 25px;
+      padding: 50px;
+      background: #5f2c82;
+      border-left: 5px solid #4caf50;
+      border-radius: 10px;
+      display: none;
+      font-size: 25px;
+      color:white;
+      text-align:center;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back a {
+      color: #5f2c82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 30px 15px;
+        padding: 25px 20px;
+      }
+    }
+      .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="dashboard">
+  <div class="phonepe">
+    <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+      Phonepe
+    </div></a>
+    <!--      <div class="div1">-->
+    <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+    <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+    <!--      </div>-->
+  </div>
+  <div class="container">
+    <div class="header">
+      <i class="fa fa-credit-card"></i> Check Balance
+    </div>
+
+    <form onsubmit="checkBalance(event)">
+      <div id="bln">
+        <label >pin Number</label>
+        <input type="tel" id="pin" placeholder="Enter 6-digit number" required />
+
+        <button type="submit" class="btn">Check Balance</button>
+      </div>
+      <div class="balance-box" id="balanceBox">
+        Wallet Balance<br> <strong>₹3,200.00</strong>
+      </div>
+      <a href="home" style="color:white;text-decoration:none;text-align:center;" >
+        <div class="btn" style="display:none;width:94%;" id="box" >Done</div>
+      </a>
+
+
+      <div class="back" id="back">
+        <a href="home"><i class="fa fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <div>
+      <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+      <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+      <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+      <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+      <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+    </div>
+  </div>
+</div>
+<script>
+  function checkBalance(e) {
+    e.preventDefault();
+    // You can replace this with dynamic balance fetching logic
+    document.getElementById("balanceBox").style.display = "block";
+    document.getElementById("back").style.display = "none";
+    document.getElementById("bln").style.display = "none";
+    document.getElementById("box").style.display = "block";
+  }
+</script>
+</body>
+</html>

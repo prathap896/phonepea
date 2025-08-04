@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DTH Recharge - PhonePe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+    :root {
+      --primary: #4c2edf;
+      --accent: #a1887f;
+      --bg: #f1f3f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: #333;
+    }
+
+    .container {
+      max-width: 450px;
+      background: white;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 25px;
+      background: #5f2c82;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+
+    .back {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back a {
+      color: #5f2c82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 30px 15px;
+        padding: 25px 20px;
+      }
+    }
+.phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  margin-bottom:20px;
+  border-radius: 10px 10px 10px 10px;
+  }
+.phone{
+  font-size:40px;
+  font-family:serif;
+}
+.div1{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right:5%;
+}
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+.login button:hover{
+  background:#5f2c82;
+  color:white;
+}
+.register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+  border-radius:20px;
+  border:none;
+  color:#5f2c82;
+}
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+}
+.footer{
+  background:#5f2c82;
+  color:white;
+  border-radius: 10px 10px 10px 10px;
+  margin-top:5px;
+  position:sticky;
+  bottom:0;
+}
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+      .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom:20px;
+    }
+
+    .plan-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .plan-details {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .btn {
+      width: 100%;
+      background: #5f2c82;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="container">
+  <div class="header">
+    <i class="fa fa-television"></i> DTH Recharge
+  </div>
+
+  <form onsubmit="rechargeDTH(event)">
+    <label for="provider">DTH Provider</label>
+    <select id="provider" required>
+      <option value="">Select Provider</option>
+      <option>Tata Play</option>
+      <option>Airtel DTH</option>
+      <option>Dish TV</option>
+      <option>Sun Direct</option>
+      <option>Videocon D2H</option>
+    </select>
+
+    <label for="subscriber">Subscriber ID</label>
+    <input type="text" id="subscriber" placeholder="Enter subscriber ID" style="width:94%;" required>
+
+    <label for="amount" id="amount1" style="display:none;">Amount (₹)</label>
+    <input type="number" id="amount" readonly  style="width:94%;display:none;" required >
+
+    <a href="dthupiaccounts" style="text-decoration:none;"><div  class="btn"  id="now" style="text-align:center;width:94%;display:none;">Recharge Now</div></a>
+    <button type="submit" class="btn" onclick="plans()" id="show">Show Plans</button>
+  </form>
+  <div class="plans" id="plans" style="display:none">
+    <div class="plan-card" onclick="price(199)">
+      <div class="plan-price">₹199</div>
+      <div class="plan-details">Basic Pack - 150 Channels<br>Validity: 28 Days</div>
+
+    </div>
+
+    <div class="plan-card" onclick="price(299)">
+      <div class="plan-price">₹299</div>
+      <div class="plan-details">Standard HD Pack - 200 Channels<br>Validity: 30 Days</div>
+
+    </div>
+
+    <div class="plan-card" onclick="price(399)">
+      <div class="plan-price">₹399</div>
+      <div class="plan-details">Premium HD Pack - 250 Channels<br>Validity: 56 Days</div>
+
+    </div>
+
+    <div class="plan-card" onclick="price(499)">
+      <div class="plan-price">₹499</div>
+      <div class="plan-details">Sports + Entertainment<br>Validity: 84 Days</div>
+
+    </div>
+
+    <div class="plan-card" onclick="price(699)">
+      <div class="plan-price">₹699</div>
+      <div class="plan-details">All HD + Kids + Sports + News<br>Validity: 90 Days</div>
+
+    </div>
+  </div>
+
+  <div class="back">
+    <a href="home.html"><i class="fa fa-arrow-left"></i> Back to Home</a>
+  </div>
+
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  function rechargeDTH(e) {
+    e.preventDefault();
+
+  }
+    function plans(){
+    var provider=document.getElementById("provider").value;
+    var subscriber=document.getElementById("subscriber").value;
+    if(!provider){
+    alert("Please select provider");
+    return
+    }
+
+    if(!subscriber){
+    alert("Please Enter Subscriber Id");
+    return
+    }
+
+
+    document.getElementById("plans").style.display="block";
+
+    document.getElementById("now").style.display="none";
+
+    }
+    function price(val){
+    document.getElementById("amount").value= val;
+     document.getElementById("amount1").style.display="block";
+ document.getElementById("amount").style.display="block";
+
+ document.getElementById("plans").style.display="none";
+    document.getElementById("show").style.display="none";
+    document.getElementById("now").style.display="block";
+    }
+</script>
+
+</body>
+</html>
+

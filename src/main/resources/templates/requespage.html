@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request Money</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f3f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 450px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .header {
+      background: #5f2c82;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      border-radius: 8px;
+    }
+    .btn {
+      background: #5f2c82;
+      color: white;
+      font-weight: bold;
+      padding: 14px;
+      font-size: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      margin-top: 25px;
+      cursor: pointer;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .back a {
+      color: #5f2c82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+            .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+
+</div>
+<div class="container">
+  <div class="header">Request Money</div>
+  <form onsubmit="submitRequest(event)">
+    <label for="receiver">UPI ID or Phone Number</label>
+    <input type="text" id="receiver" placeholder="e.g. 9876543210 or name@upi" required />
+
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" required min="1" />
+
+    <label for="note">Purpose (optional)</label>
+    <textarea id="note" rows="3" placeholder="Dinner, rent, etc..."></textarea>
+
+    <button class="btn" type="submit">Send Request</button>
+  </form>
+
+  <div class="back">
+    <a href="home">← Back to Home</a>
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  function submitRequest(e) {
+    e.preventDefault();
+
+    const receiver = document.getElementById('receiver').value.trim();
+    const amount = parseFloat(document.getElementById('amount').value.trim());
+    const note = document.getElementById('note').value.trim();
+
+    if (!receiver || amount <= 0) {
+      alert("Please enter valid receiver and amount.");
+      return;
+    }
+
+    // Simulate request sent
+    alert(`✅ Request of ₹${amount} sent to ${receiver}${note ? " for " + note : ""}`);
+
+    // Reset form
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

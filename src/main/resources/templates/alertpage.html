@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhonePe Alert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background: #f1f3f5;
+          margin: 0;
+          padding: 0;
+
+
+        }
+        .alert-box {
+          background: #fff;
+          width: 90%;
+          max-width: 400px;
+          padding: 30px;
+          text-align: center;
+          border-radius: 15px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+          }
+          .div{
+          display:flex;
+           justify-content: center;
+          align-items: center;
+          margin:5% 0 5% 0
+        }
+        .alert-icon {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+        .alert-icon.success {
+          color: #4caf50;
+        }
+        .alert-icon.fail {
+          color: #d32f2f;
+        }
+        h2 {
+          margin: 10px 0;
+          color: #4c2edf;
+        }
+        p {
+          font-size: 18px;
+          color: #333;
+        }
+        .btn {
+          margin-top: 30px;
+          display: inline-block;
+          background: #5f2c82;
+          color: white;
+          padding: 12px 24px;
+          font-size: 16px;
+          border: none;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+
+
+            .phonepe{
+      background:linear-gradient(90deg, #5f2c82, #49a09d);
+      color:white;
+      display:flex;
+    justify-content:space-between;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius: 10px 10px 10px 10px;
+
+      }
+      .phone{
+      font-size:40px;
+      font-family:serif;
+      }
+      .div1{
+      display:flex;
+          justify-content: flex-end;
+        align-items: center;
+    margin-right:5%;
+      }
+      .login{
+      margin-right:10%;
+      }
+      .login button{
+      background:white;
+      margin-right:3%;
+      padding: 12px;
+    font-size:17px;
+    font-weight:600;
+    border-radius:20px;
+    border:none;
+    color:#5f2c82;
+      }
+      .login button:hover{
+      background:#5f2c82;
+      color:white;
+      }
+      .register button{
+      background:white;
+      margin-right:5%;
+      padding: 12px;
+      font-size:17px;
+      font-weight:600;
+    border-radius:20px;
+    border:none;
+    color:#5f2c82;
+      }
+      .register button:hover{
+      background:#5f2c82;
+      color:white;
+      }
+      .footer{
+      background:#5f2c82;
+      color:white;
+    border-radius: 10px 10px 10px 10px;
+    margin-top:5px;
+    position:sticky;
+    bottom:0;
+      }
+      .footer a{
+      padding: 10px 30px;
+      }
+      .footer div{
+      display:flex;
+      justify-content:center;
+      }
+
+      .footer button{
+      border:none;
+      background: white;
+      color:#5f2c82;
+       padding: 10px 16px;
+      border-radius: 10px 10px 10px 10px;
+
+      }
+    </style>
+</head>
+<body>
+<div class="phonepe">
+    <a href="home.html" style="color:white;text-decoration:none;"><div class="phone">
+        Phonepe
+    </div></a>
+    <!--      <div class="div1">-->
+    <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+    <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+    <!--      </div>-->
+
+</div>
+<div class="div">
+    <div class="alert-box" id="alertBox">
+        <div class="alert-icon success" id="icon">✅</div>
+        <h2 id="alertTitle">Request Sent!</h2>
+        <p id="alertMsg">You have successfully requested ₹500 from <strong>9876543210</strong>.</p>
+        <a href="home" class="btn">Back to Home</a>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+        <a href="searchge"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+        <a href="scannerpin"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+        <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+        <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+    </div>
+</div>
+<script>
+    // Change alert type dynamically
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type") || "success"; // success or fail
+    const amount = params.get("amount") || "500";
+    const user = params.get("user") || "9876543210";
+
+    const icon = document.getElementById("icon");
+    const title = document.getElementById("alertTitle");
+    const msg = document.getElementById("alertMsg");
+
+    if (type === "fail") {
+      icon.textContent = "❌";
+      icon.classList.remove("success");
+      icon.classList.add("fail");
+      title.textContent = "Request Failed!";
+      msg.innerHTML = `Unable to request ₹${amount} from <strong>${user}</strong>. Please try again.`;
+    } else {
+      icon.textContent = "✅";
+      icon.classList.remove("fail");
+      icon.classList.add("success");
+      title.textContent = "Request Sent!";
+      msg.innerHTML = `You have successfully requested ₹${amount} from <strong>${user}</strong>.`;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Bank</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    :root {
+      --primary: #4c2edf;
+      --accent: #a1887f;
+      --bg: #f1f3f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+    }
+
+    .header {
+      background: #5f2c82;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+    }
+    .div{
+    width: 500px;
+      margin: auto;
+      padding: 20px;
+      background-color:#9e9e9e12;
+      border-radius: 15px 15px 15px 15px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-between;
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      background: #49a09d;
+      transition: 0.3s;
+    }
+
+    .toggle-btn.inactive {
+      background: #5f2c82;
+      color: white;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+    }
+
+    input{
+      width: 94%;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+     select {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      background: #5f2c82;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .success {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+      display: none;
+    }
+
+
+        .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+
+</div>
+<div class="div">
+  <div class="header">🏦 Add Bank Account</div>
+
+  <div class="container">
+    <div class="toggle-buttons">
+      <div class="toggle-btn" id="selfBtn" onclick="switchMode('self')">👤 Self Account</div>
+      <div class="toggle-btn inactive" id="toBankBtn" onclick="switchMode('bank')">➡️ To Bank</div>
+    </div>
+
+    <form id="bankForm"  action="banksuccessfully" method="get">
+      <div id="receiverNameField" style="display:none;">
+        <label for="receiverName">Receiver Name</label>
+        <input type="text" id="receiverName" placeholder="Enter full name">
+      </div>
+
+      <label for="bank">Select Bank</label>
+      <select id="bank" required>
+        <option value="">-- Select Bank --</option>
+        <option value="SBI">State Bank of India</option>
+        <option value="HDFC">HDFC Bank</option>
+        <option value="ICICI">ICICI Bank</option>
+        <option value="Axis">Axis Bank</option>
+        <option value="PNB">Punjab National Bank</option>
+      </select>
+
+      <label for="account">Account Number</label>
+      <input type="text" id="account" placeholder="Enter account number" required>
+
+      <label for="confirm">Confirm Account Number</label>
+      <input type="text" id="confirm" placeholder="Re-enter account number" required>
+
+      <label for="ifsc">IFSC Code</label>
+      <input type="text" id="ifsc" placeholder="e.g., SBIN0001234" required>
+
+      <div id="upiField">
+        <label for="upi">Create UPI ID</label>
+        <input type="text" id="upi" placeholder="e.g., username@bank" required>
+      </div>
+
+      <button type="submit" class="btn" onsubmit="addBank(event)">Add Bank</button>
+    </form>
+
+    <!--    <div class="success" id="successMsg">✅ Bank account added successfully!</div>-->
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+<script>
+  let mode = "self";
+
+  function switchMode(selected) {
+    mode = selected;
+
+    document.getElementById("selfBtn").classList.toggle("inactive", selected !== 'self');
+    document.getElementById("toBankBtn").classList.toggle("inactive", selected !== 'bank');
+
+    document.getElementById("receiverNameField").style.display = selected === "bank" ? "block" : "none";
+    document.getElementById("upiField").style.display = selected === "self" ? "block" : "none";
+  }
+
+  function addBank(event) {
+    event.preventDefault();
+
+    const acc = document.getElementById("account").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (acc !== confirm) {
+      alert("Account numbers do not match!");
+      return;
+    }
+
+    // You can save or send to backend
+    console.log("Added:", {
+      mode,
+      receiver: document.getElementById("receiverName").value,
+      bank: document.getElementById("bank").value,
+      account: acc,
+      ifsc: document.getElementById("ifsc").value,
+      upi: document.getElementById("upi").value,
+    });
+
+
+  }
+</script>
+
+</body>
+</html>

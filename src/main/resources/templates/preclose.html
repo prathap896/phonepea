@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Pre-Closure</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+     .header {
+      background: #5f2c82;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px 15px 15px 15px;
+      margin-bottom:20px;
+    }
+
+    .info {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .info strong {
+      display: inline-block;
+      width: 160px;
+      color: #333;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #4caf50;
+    }
+
+    .confirm-section {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+    }
+
+    .confirm-section p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #5f2c82;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+
+
+    @media (max-width: 480px) {
+      .info strong {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .info {
+        display: block;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+        .phonepe{
+  background:linear-gradient(90deg, #5f2c82, #49a09d);
+  color:white;
+  display:flex;
+justify-content:space-between;
+padding:15px;
+margin-bottom:20px;
+border-radius: 10px 10px 10px 10px;
+
+  }
+  .phone{
+  font-size:40px;
+  font-family:serif;
+  }
+  .div1{
+  display:flex;
+      justify-content: flex-end;
+    align-items: center;
+margin-right:5%;
+  }
+  .login{
+  margin-right:10%;
+  }
+  .login button{
+  background:white;
+  margin-right:3%;
+  padding: 12px;
+font-size:17px;
+font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .login button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .register button{
+  background:white;
+  margin-right:5%;
+  padding: 12px;
+  font-size:17px;
+  font-weight:600;
+border-radius:20px;
+border:none;
+color:#5f2c82;
+  }
+  .register button:hover{
+  background:#5f2c82;
+  color:white;
+  }
+  .footer{
+  background:#5f2c82;
+  color:white;
+border-radius: 10px 10px 10px 10px;
+margin-top:5px;
+position:sticky;
+bottom:0;
+  }
+  .footer a{
+  padding: 10px 30px;
+  }
+  .footer div{
+  display:flex;
+  justify-content:center;
+  }
+
+  .footer button{
+  border:none;
+  background: white;
+  color:#5f2c82;
+   padding: 10px 16px;
+  border-radius: 10px 10px 10px 10px;
+
+  }
+  </style>
+</head>
+<body>
+<div class="phonepe">
+  <a href="home" style="color:white;text-decoration:none;"><div class="phone">
+    Phonepe
+  </div></a>
+  <!--      <div class="div1">-->
+  <!--        <div class="login"><a href="login-page"><button type="submit">Login</button></a></div>-->
+  <!--        <div class="register"><a href="registration"><button type="Submit">Register</button></a></div>-->
+  <!--      </div>-->
+</div>
+<div class="container">
+
+  <div class="header">🔓 Loan Pre-Closure Request</div>
+  <div class="info"><strong>Loan Type:</strong> Personal Loan</div>
+  <div class="info"><strong>Loan Amount:</strong> ₹1,00,000</div>
+  <div class="info"><strong>Paid EMIs:</strong> 8 / 12</div>
+  <div class="info"><strong>Remaining Balance:</strong> ₹28,000</div>
+  <div class="info"><strong>Outstanding Interest:</strong> ₹1,200</div>
+  <div class="info"><strong>Total Pre-Closure Amount:</strong> <span class="highlight">₹29,200</span></div>
+
+  <div class="confirm-section">
+    <p>⚠️ Are you sure you want to close your loan early?</p>
+    <p>This action is permanent and will stop further EMIs.</p>
+    <a href="precloseupisucees" class="btn">Confirm Pre-Close</a>
+  </div>
+</div>
+<div class="footer">
+  <div>
+    <a href="home"><button style="font-size:large;"><i class="fa fa-home"><br> Home</i></button></a>
+    <a href="searchpage"><button style="font-size:large;"><i class="fa fa-search"><br> Search</i></button></a>
+    <a href="scanner"><button style="font-size:35px;"><i class='fa fa-qrcode'></i></button></a>
+    <a href="alertpage"><button style="font-size:large;"><i class="fa fa-bell"><br> Alerts</i></button></a>
+    <a href="history"><button style="font-size:large;"><i class='fa fa-history'><br> History</i></button></a>
+  </div>
+</div>
+</body>
+</html>
